@@ -24,7 +24,7 @@ My page: page with profile and all the liked books
 Wikipedia API for a little biography of the author
 
 ## Wireframes    
-https://wireframepro.mockflow.com/view/Ma9f049c5e2ef4f1452e77725e0e4fb091602166447826
+El wireframe lo tengo en fotos en la carpeta wireframe
 
 ## Data structure
 Classes and methods definition

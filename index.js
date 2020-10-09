@@ -20,3 +20,7 @@ findBooks(searchString)
 //inauthor: Returns results where the text following this keyword is found in the author.
 //inpublisher: Returns results where the text following this keyword is found in the publisher.
 //subject:
+
+
+//apuntarse ids en vez de nombres para likes i dislikes
+// isbn per asegurar-se que surtin llibres diferents (industry identifier)
