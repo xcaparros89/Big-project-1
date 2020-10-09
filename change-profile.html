@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <nav>
+        <div>IconoWannaRead</div>
+        <div class='nav-buttons'>
+            <button>Home</button>
+            <button>Sign up</button>
+            <button>Log in</button>
+        </div>
+    </nav>
+    <main>
+        <section class='lColumn'>
+            <div>
+                <h1>Sign Up</h1>
+            </div>
+            <div>
+                <p>Username:</p><input type="text" id="username" placeholder="Username" />
+                <p>Name and surname:</p><input type="text" id="name" placeholder="Name" />
+                <p>Email:</p><input type="email" id="email" placeholder="Email" />
+                <p>Genre:</p>
+                <div>
+                    <input type="radio" id="male" name="genre" value="male" />
+                    <label for="male">Male</label>
+                </div>
+                <div>
+                    <input type="radio" id="female" name="genre" value="female" />
+                    <label for="female">Female</label>
+                </div>
+                <div>
+                    <input type="radio" id="other" name="genre" value="other" checked />
+                    <label for="other">Other</label>
+                </div>
+                <p>New Password:</p><input type="password" id="password" placeholder="****" />
+                <p>Put your old password:</p><input type="password" id="password" placeholder="****" />
+                <p>Repeat your old password:</p><input type="password" id="password" placeholder="****" />
+                <button>Modify profile</button>
+            </div>
+        </section>
+        <section class='rColumn'>
+            <h2>Pending</h2>
+        </section>
+    </main>
+    <script src="index.js"></script>
+</body>
+</html>

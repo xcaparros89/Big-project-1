@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <title>Pokémon - Login</title>
+  <link href="https://fonts.googleapis.com/css?family=Open+Sans:300,600" rel="stylesheet">
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/burger-menu-icon.css">
+</head>
+
+<body>
+  <header>
+    <nav>
+      <div class="nav-container">
+        <a href="index.html"><img src="images/pokemon_logo.png" alt="Logo" class="navbar-brand"></a>
+        <div>
+          <div class="burger-menu-icon" >
+            <span></span>
+            <span></span>
+            <span></span>
+            <span></span>
+          </div>
+        </div>
+      </div>
+      <ul class="nav-menu hide-menu" id="nav-menu">
+        <li><a href="dashboard.html">Dashboard</a></li>
+        <li><a href="signup.html">Sign Up</a></li>
+        <li><a href="login.html" class="selected">Login</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="login">
+      <h2>Login</h2>
+      <div class="form-wrapper">
+        <form class="login-form" action="">
+          <input type="email" id="email" placeholder="Email" />
+          <input type="password" id="password" placeholder="****" /> <p>ull per canviar de tipu password a tipu text</p>
+          <input type="checkbox" id="remember-me" name="remember-me">
+            <label for="remember-me">Remember me?</label>
+          <button type="submit" class="button" id="login-button">Login</button>
+        </form>
+        <div class="message-container">
+        </div>
+      </div>
+      <p>Don't have and account?<a href=#>Sign up</a></p>
+    </section>
+  </main>
+  <script src="scripts/Login.js"></script>
+  <script src="scripts/Database.js"></script>
+</body>
+
+</html>
