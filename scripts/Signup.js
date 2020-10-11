@@ -158,7 +158,7 @@ class Signup {
 
     this.errorsWrapper.appendChild(successMessageP);
 
-  }
+  };
 
   
   // activar o desactivar el botón de envio (Sign Up)
@@ -173,13 +173,13 @@ class Signup {
     else {
       this.buttonInput.disabled = false;
     }
-  }
+  };
 
   removeMessages = () => {
     setTimeout( () => {
       this.errorsWrapper.innerHTML = "";
-    }, 2000)
-  }
+    }, 2000);
+  };
 
 
   setErrorMessages = () => {
@@ -196,9 +196,9 @@ class Signup {
       errorMessageP.innerHTML = errorStr;
 
       this.errorsWrapper.appendChild(errorMessageP);
-    })
+    });
 
-  }
+  };
 }
 
 // crear una nueva instanica del Signup (objeto)

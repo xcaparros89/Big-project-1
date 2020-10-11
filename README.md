@@ -24,7 +24,7 @@ My page: page with profile and all the liked books
 Wikipedia API for a little biography of the author
 
 ## Wireframes    
-El wireframe lo tengo en fotos en la carpeta wireframe
+<img src='./wireframe/layout.jpg' alt='layout' />
 
 ## Data structure
 Classes and methods definition

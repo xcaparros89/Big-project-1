@@ -4,31 +4,26 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
-    <nav>
-        <div>IconoWannaRead</div>
-        <div class='nav-buttons'>
-            <button>Home</button>
-            <button>Sign up</button>
-            <button>Log in</button>
-        </div>
-    </nav>
     <main>
         <section class='section1'>
             <div>
-                <h1>WannaRead</h1>
+                <img src='./img/llibres.png' />
             </div>
             <div>
                 <p>Looking for an author?</p>
-                <input>
+                <input type="text" id="username" placeholder="Author" class='author-input'/><button class='author-btn'>Search</button><!--canviar per lupa fontawersome, potser ficar nom d'autors en el placeholder-->
                 <p>For books of a category?</p>
-                <input>
+                <input type="text" id="username" placeholder="Category" class='category-input' /><button class='category-btn'>Search</button><!--canviar per lupa fontawersome-->
                 <p>Or do you want a more advance search?</p>
                 <button>Advance search</button>
             </div>
         </section>
         <section class='section2'>
+        </section>
+        <!-- <section class='section2'>
             <h2>Recomendations</h2>
             <button>Category1</button>
             <div>
@@ -42,9 +37,8 @@
             <div>
                 <img /> <img /> <img />
             </div>
-        </section>
+        </section> -->
     </main>
-    <h1>WannaRead</h1>
     <script src="index.js"></script>
 </body>
 </html>
