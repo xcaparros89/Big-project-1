@@ -1,50 +1,46 @@
 
-let searchString = '';
-let makeSearchString = (kind, string)=>{
-    searchString += `+${kind}${string}`;
-}
 
-let findBooks = (searchString)=>{
-    fetch(`https://www.googleapis.com/books/v1/volumes?q= ${searchString}`).then(response => response.json()).then(data=>console.log(data))
-}
+let page = 0;
 
-array = [['intitle:', 'final empire'],['inauthor:', 'Sanderson']]
-
-array.forEach(arr=>{
-    makeSearchString(arr[0], arr[1])
-})
-
-//findBooks(searchString)
 
 //BASIC SEARCH
 let basicSearch = async (searchString)=>{
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q= ${searchString}&langRestrict=en&printType=books`)
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q= ${searchString}&langRestrict=en&printType=books&startIndex=${page*10}`)
     const data = await response.json();
     console.log(data.items)
     return data.items;
 }
-
+let resultsSearch
+page=0;
+let myFunction = async()=>{
+    resultsSearch = await basicSearch('inauthor:'+authorInput.value);
+    console.log(resultsSearch)
+    showResults(resultsSearch)
+}
 //AUTHOR SEARCH
 let authorBtn = document.querySelector('.author-btn');
 let authorInput = document.querySelector('.author-input');
+
 authorBtn.addEventListener('click', async ()=>{
-    let results = await basicSearch('inauthor:'+authorInput.value);
-    console.log(results)
-    showResults(results)
+    resultsSearch = await basicSearch('inauthor:'+authorInput.value);
+    console.log(resultsSearch)
+    showResults(resultsSearch)
 })
 
 //CATEGORY SEARCH
 let categoryBtn = document.querySelector('.category-btn');
 let categoryInput = document.querySelector('.category-input');
+page=0;
 categoryBtn.addEventListener('click', async ()=>{
-    let results = await basicSearch('subject:'+categoryInput.value);
-    console.log(results)
-    showResults(results)
+    let resultsSearch = await basicSearch('subject:'+categoryInput.value);
+    console.log(resultsSearch)
+    showResults(resultsSearch)
 })
 
 let showResults = data => {
     const section2 = document.querySelector('.section2');
     section2.innerHTML = '';
+    if(data){
     data.map(result=>{
         const section = document.createElement('section');
         section2.append(section);
@@ -53,12 +49,35 @@ let showResults = data => {
             let authors = result.volumeInfo.authors.join(', ');
 
             section.innerHTML +=`<p>Authors: ${authors}</p>`;
-        }
-        result.volumeInfo.description ? section.innerHTML += `<p>${result.volumeInfo.description}</p>` : null;
-    });
+        };
+        if(result.volumeInfo.categories){
+            let categories = result.volumeInfo.categories.join(', ');
+            section.innerHTML +=`<p>Categories: ${categories}</p>`;
+        };
+        let averageRating = result.volumeInfo.averageRating? result.volumeInfo.averageRating : 'Not found';
+        section.innerHTML +=`<p>Rating: ${averageRating}</p>`;
+        section.addEventListener('click', ()=>{
+            result.volumeInfo.description ? section.innerHTML += `<p>${result.volumeInfo.description}</p>` : null;
+            result.volumeInfo.imageLinks.smallThumbnail ? section.innerHTML += `<img src=${result.volumeInfo.imageLinks.smallThumbnail} />`: null;
+            result.saleInfo.listPrice ? section.innerHTML += `<p>${result.saleInfo.listPrice.amount}${result.saleInfo.listPrice.currencyCode} <a href=${result.saleInfo.buyLink} target="_blank">Buy</a></p>` : null;
+            result.volumeInfo.previewLink ? section.innerHTML += `<a href=${result.volumeInfo.previewLink} target="_blank">Read preview</a>` : null;
+            section.innerHTML += '<button onClick="myFunction()" class="return-btn">Return to search</button>'
+            section2.innerHTML = section.innerHTML;
+        });
+    })
+    let returnBtn = document.createElement('button');
+        returnBtn.innerText= 'Show more results'
+        returnBtn.addEventListener('click', async ()=>{
+            page++;
+            resultsSearch = await basicSearch('inauthor:'+authorInput.value);
+            console.log(resultsSearch)
+            showResults(resultsSearch)
+        })
+        section2.append(returnBtn)
+} else{
+        section2.innerHTML = '<p>No data found, try searching something else</p>'
+    };
 };
-
-
 //intitle: Returns results where the text following this keyword is found in the title.
 //inauthor: Returns results where the text following this keyword is found in the author.
 //inpublisher: Returns results where the text following this keyword is found in the publisher.

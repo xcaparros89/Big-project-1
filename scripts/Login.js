@@ -39,21 +39,36 @@ class Login {
     if (user) {
       // si el usuario inicia la sesion con exito
       // agrega la clase para cambiar el color y sobrescribir el estilo anterior
-      message.innerHTML = `hola, ${user.email}`;
+      console.log(user)
+      console.log(window.localStorage)
+      message.innerHTML = `hello, ${user.email}`;
       message.classList.add("correct-message");
     }
     else {
       // si el inicio de sesión no se ha realizado correctamente
-      message.innerHTML = 'el email o/y password son incorectos';
+      message.innerHTML = 'the email and/or password are incorrect';
     }
 
     this.messageContainer.appendChild(message);
 
-    if (user) this.redirect();
+    if (user) this.goToMyPage(user);
   }
 
-  redirect = () => {
-    setTimeout( ()=> location.assign('dashboard.html'), 2000);
+  goToMyPage = (user) => {
+    let myPage = document.querySelector('.login')
+    myPage.innerHTML =`
+    <h1>My page</h1>
+    <p>Hello ${user.username}, how are you doing tody?</p>
+    <h2>Profile:</h2>
+    <p>Name:${user.name}</p>
+    <p>Email:${user.email}</p>
+    `
+    myPage.innerHTML = `
+    <h2>Want to read</h2>`
+    myPage.innerHTML = `
+    <h2>Readed</h2>`
+    myPage.innerHTML = `
+    <h2>Trash</h2>`
   }
 
 }

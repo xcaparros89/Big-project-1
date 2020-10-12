@@ -20,15 +20,17 @@
                 <h1>Advance Search</h1>
             </div>
             <div>
-                <p>Author:</p> <input />
-                <p>Category</p> <input />
-                <p>Title:</p> <input />
-                <p>Publisher:</p> <input />
-                <input type="radio" id="relevance" name="order" value="relevance">
+                
+               
+                <p>Author:</p><input type="text" placeholder="Author" class='author-input'/>
+                <p>Category</p><input type="text" placeholder="Category" class='category-input' />
+                <p>Language:</p>  <input type="text" placeholder="English" class='language-input' />
+                <p>Publisher:</p>  <input type="text" placeholder="Publisher" class='publisher-input' />
+                <input type="radio" id="relevance" name="order" value="relevance" checked>
                 <label for="relevance">By relevance</label><br>
                 <input type="radio" id="new" name="order" value="new">
                 <label for="new">By new</label><br>
-                <button>Advance search</button>
+                <button class='advance-btn'>Advance search</button>
             </div>
         </section>
         <section class='section2'>
@@ -47,7 +49,7 @@
             </div>
         </section>
     </main>
-    <h1>WannaRead</h1>
-    <script src="index.js"></script>
+    <script src='/twoDigitsLanguage.js'></script>
+    <script src="search.js"></script>
 </body>
 </html>
