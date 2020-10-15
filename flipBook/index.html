@@ -34,7 +34,7 @@
               <p class='question'>For books of a category?</p>
               <input type="text" placeholder="Category" class='category-input-b' /><button class='category-btn-b'>Search</button><!--canviar per lupa fontawersome-->
             </div>
-            <div>
+            <div class='unnecesary'>
               <p class='question'>Or do you want a more advance search?</p>
               <p>Flip the book to the next page -></p>
             </div>
@@ -42,7 +42,7 @@
       </section>
         <div class="page page0">
           <div class="side side0">
-              <section class='basic-recomendations'>
+              <section class='basic-recomendations recomendations'>
                   <h1>Recomendations</h1>
               </section>
           </div>
@@ -52,9 +52,9 @@
                       <h2>Advance Search</h2>
                   </div>
                   <div id='inputs-adv-search'>
-                      <div><p>Author:</p><input type="text" class='author-input'/></div>
-                      <div><p>Category:</p><input type="text" class='category-input' /></div>
-                      <div><p>Language:</p><input list="languages" class='language-input' />
+                      <div class='adv-flex'><p>Author:</p><input type="text" class='author-input'/></div>
+                      <div class='adv-flex'><p>Category:</p><input type="text" class='category-input' /></div>
+                      <div class='adv-flex'><p>Language:</p><input list="languages" class='language-input' />
                       <datalist id='languages'>
                           <option value='spanish'></option>
                           <option value='english'></option>
@@ -75,7 +75,7 @@
                           <option value='catalan'></option>
                           <option value='chinese'></option>
                       </datalist></div>
-                      <div><p>Publisher:</p><input type="text" class='publisher-input' /></div>
+                      <div class='adv-flex' ><p>Publisher:</p><input type="text" class='publisher-input' /></div>
                       <div>
                        <input type="radio" id="relevance" name="order" value="relevance" checked>
                       <label for="relevance">By relevance</label>
@@ -91,7 +91,7 @@
         </div>
         <div class="page page1">
           <div class="side side0">
-            <section class='advance-recomendations'>
+            <section class='advance-recomendations recomendations'>
               <h1>Recomendations</h1>
             </section>
           </div>
@@ -143,7 +143,8 @@
         </div>
         <div class="page page2">
           <div class="side side0">
-            <section id='recomendations3'>
+            <section id='recomendations3' class='recomendations'>
+              <h1>Recomendations</h1>
             </section>
           </div>
           <div class="side side1">
@@ -168,7 +169,7 @@
         </div>
         <div class="page page3">
           <div class="side side0">
-            <section id='recomendations4'>
+            <section id='recomendations4' class='recomendations'>
               <h1>Recomendations</h1>
             </section>
           </div>

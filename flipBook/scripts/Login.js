@@ -26,10 +26,19 @@ class Login {
         return true;
       }
     })
-
-
     this.showMessage(user);
+    window.location.reload()
   }
+  showAndHide(element) {
+    if(screen.width<826){
+    var x = document.querySelector(element);
+    if (x.style.display === "none") {
+      x.style.display = "block";
+    } else {
+      x.style.display = "none";
+    }
+  }
+  } 
 
   // mostrar el mensaje de error o mensaje de exito
   showMessage = (user) =>{
@@ -65,17 +74,20 @@ class Login {
     let recomendations = document.querySelector('#recomendations3');
     recomendations.innerHTML = `
     <section class='wannaread-s'>
-      <h2>Wanna read:</h2>
+      <h2 id='wannaread-t'>Wanna read:</h2>
       <div class='like-list wannaread'></div>
     </section>
     <section class='reading-s'>
-      <h2>Reading:</h2>
+      <h2 id='reading-t'>Reading:</h2>
       <div class='like-list reading'></div>
     </section>
     <section class='readed-s'>
-      <h2>Readed:</h2>
+      <h2 id='readed-t'>Readed:</h2>
       <div class='like-list readed'></div>
     </section>`
+    document.getElementById('wannaread-t').addEventListener('click',()=> this.showAndHide('.wannaread'))
+    document.getElementById('reading-t').addEventListener('click',()=> this.showAndHide('.reading'))
+    document.getElementById('readed-t').addEventListener('click',()=> this.showAndHide('.readed'))
   }
   printReadLists = (listName, user) =>{
       let sectionList = document.querySelector(`.${listName}`);
@@ -105,12 +117,12 @@ class Login {
     <h1>My page</h1>
     <p>Hello ${user.username}, how are you doing today?</p>
     <h2>Profile:</h2>
-    <p>Username:${user.username}</p>
-    <p>Name:${user.name}</p>
-    <p>Email:${user.email}</p>
+    <p>Username: ${user.username}</p>
+    <p>Name: ${user.name}</p>
+    <p>Email: ${user.email}</p>
     <p>Age: 42 years</p>
     <p>Hobbies: Add some hobbies</p>
-    <button class='return-btn'>Change profile</button>
+    <button class='more-btn'>Change profile</button>
     ` 
     this.printTitlesLike();
     user.wannaread.length ? this.printReadLists('wannaread', user) : null;

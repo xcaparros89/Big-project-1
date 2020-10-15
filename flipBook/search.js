@@ -9,9 +9,10 @@ class SearchParameters {
         this.resultsSearch = '';
         this.user = JSON.parse(localStorage.getItem('currentUser'));
         this.recomendationSection = recomendationSection
+        this.results = screen.width < 826 ? 4 : 8;
     }
      async basicSearch(){
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q= ${this.author}${this.category}${this.publisher}&orderBy=${this.order}&langRestrict=${this.language}&printType=books&maxResults=8&startIndex=${this.page*10}`)
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q= ${this.author}${this.category}${this.publisher}&orderBy=${this.order}&langRestrict=${this.language}&printType=books&maxResults=${this.results}&startIndex=${this.page*10}`)
         console.log(`https://www.googleapis.com/books/v1/volumes?q= ${this.author}${this.category}${this.publisher}&orderBy=${this.order}&langRestrict=${this.language}&printType=books&maxResults=8&startIndex=${this.page*10}`)
         const data = await response.json();
         return this.showResults(data.items)
@@ -66,14 +67,14 @@ class SearchParameters {
                         result.volumeInfo.previewLink ? infoBookEl.innerHTML += `<a href=${result.volumeInfo.previewLink} target="_blank">Read preview</a>` : null;
                         let basicSearch;
                         if(typeof author1 !== 'undefined'){basicSearch = 'author1.basicSearch()'} else if (typeof authorB !== 'undefined'){basicSearch = 'authorB.basicSearch()'} else {basicSearch = 'categoryB.basicSearch()'}
-                        infoBookEl.innerHTML += `<button id="${id}" onClick=${basicSearch} class="return-btn">Return to search</button>`;
+                        infoBookEl.innerHTML += `<button id="${id}" onClick=${basicSearch} class="return-btn">Return</button>`;
                         result.volumeInfo.description ? section.innerHTML += `<p class='book-description'>${result.volumeInfo.description}</p>` : null;
                         section2.innerHTML = section.innerHTML
                     });
                 })
                 let returnBtn = document.createElement('button');
                     returnBtn.innerText= 'Show more results'
-                    returnBtn.setAttribute('class', 'return-btn')
+                    returnBtn.setAttribute('class', 'more-btn')
                     returnBtn.addEventListener('click', async ()=>{
                         this.page++;
                         this.basicSearch()
