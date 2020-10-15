@@ -1,8 +1,11 @@
 'use strict'
 
 class Database {
+  constructor(){
+    this.currentUser = '';
+  }
   // recuperar los usuarios - el array
-  getAllUsers = () => {
+  getAllUsers(){
     // recuperar el string
     const usersStr = localStorage.getItem("users");
     // convertir el string a un array
@@ -17,7 +20,7 @@ class Database {
 
   }
 
-  saveNewUser = (newUser) => {
+  saveNewUser(newUser){
 
     // recuperar el array de los usuarios del localStorage
     const usersArr = this.getAllUsers();
@@ -31,8 +34,27 @@ class Database {
     // almacenar lo de nuevo
     localStorage.setItem("users", usersStr);
   }
+
+  changeUser(changedUser){
+      const usersArr = this.getAllUsers();
+      const userIndex = usersArr.findIndex(obj=> obj.email === changedUser.email);
+      const newUsersArr = usersArr.map((obj, i)=> i === userIndex ? changedUser : obj);
+      localStorage.setItem("users", JSON.stringify(newUsersArr));
+  }
+  addBook(list, bookId){
+    console.log(list, bookId)
+    this.currentUser = JSON.parse(localStorage.getItem('currentUser'));
+    console.log(this.currentUser)
+    const likeArrays = ['wannaread', 'readed', 'reading'];
+    likeArrays.forEach(arr=>{
+      this.currentUser[arr] = this.currentUser[arr].filter(book=> book !== bookId);
+    })
+    this.currentUser[list].push(bookId)
+    localStorage.setItem("currentUser", JSON.stringify(this.currentUser));
+    console.log(this.currentUser)
+    this.changeUser(this.currentUser)
+  }
+
 }
 
 const db = new Database();
-
-console.log('db', db)

@@ -158,14 +158,14 @@ class Signup {
 
     this.errorsWrapper.appendChild(successMessageP);
 
-  };
+  }
 
-  
+
   // activar o desactivar el botón de envio (Sign Up)
   checkButton = () => {
     const errorsObj = validator.getErrors();
     const errorsArr = Object.values(errorsObj);
-    
+
 
     if(errorsArr.length > 0) {
       this.buttonInput.disabled = true;
@@ -173,19 +173,19 @@ class Signup {
     else {
       this.buttonInput.disabled = false;
     }
-  };
+  }
 
   removeMessages = () => {
     setTimeout( () => {
       this.errorsWrapper.innerHTML = "";
-    }, 2000);
-  };
+    }, 2000)
+  }
 
 
   setErrorMessages = () => {
     // vacia los errores para que no se sumen
     this.errorsWrapper.innerHTML = "";
-    
+
     const errorsObj = validator.getErrors();
 
     // convertir el objeto a un array de strings
@@ -196,12 +196,12 @@ class Signup {
       errorMessageP.innerHTML = errorStr;
 
       this.errorsWrapper.appendChild(errorMessageP);
-    });
+    })
 
-  };
+  }
 }
 
 // crear una nueva instanica del Signup (objeto)
 const signup = new Signup();
 
-window.addEventListener("load", signup.addListeners );
+window.addEventListener("load", signup.addListeners ); 

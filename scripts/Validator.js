@@ -23,7 +23,7 @@ class Validator {
     }
   }
     //validar que tenga nombre, username y check
-    validateFill = (value, field) =>{
+    validateFill(value, field){
       if (value){
         delete this.errors[field]
       } else {
@@ -31,7 +31,7 @@ class Validator {
       }
     }
     // validar el nombre del email
-    validateValidEmail = (email) => {
+    validateValidEmail(email){
       // si el email es valido, quita el mensaje de error
       if (this.emailIsValid(email)) {
         delete this.errors.invalidEmailError;
@@ -43,7 +43,7 @@ class Validator {
     }
 
     // funcion auxiliar de `validateEmail`
-    emailIsValid = (email) => {
+    emailIsValid(email){
       // RegEx objeto special - contiene las reglas de la sintaxis
       const emailRegEx = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,4})+$/;
       
@@ -55,7 +55,7 @@ class Validator {
     }
     
     // validar que el email no esta tomado (es unico)
-    validateUniqueEmail = (newEmail) => {
+    validateUniqueEmail(newEmail){
       const usersDB = db.getAllUsers();
 
       let emailUnique = true;
@@ -80,7 +80,7 @@ class Validator {
     }
 
     // validar la longitud del password
-    validatePassword = (password) => {
+    validatePassword(password){
       if (password.length > 5) {
         // quita el mensaje de error
         delete this.errors.passwordError;
@@ -92,7 +92,7 @@ class Validator {
     }
 
     // validar si el password y el repeat-password coinciden
-    validatePasswordRepeat = (password, passwordRepeat) => {
+    validatePasswordRepeat(password, passwordRepeat){
       if (password === passwordRepeat) {
         // si los 2 passwords coinciden, quita el error
         delete this.errors.repeatPasswordError;
@@ -104,12 +104,12 @@ class Validator {
     }
 
     // obtener el objeto con errors, para mostrarlos al usuario en la pagina Signup
-    getErrors = () => {
+    getErrors(){
       return this.errors;
     }
 
     // reiniciar los errores mostrados, para el proximo Signup
-    resetValidator = () => {
+    resetValidator(){
       this.errors = {
         noName: this.noName,
         noUsername: this.noUsername,

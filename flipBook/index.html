@@ -4,51 +4,189 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <script src="https://kit.fontawesome.com/a0fcdbbce9.js" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="style.css">
+    <link href="https://fonts.googleapis.com/css2?family=Dancing+Script:wght@400;700&family=Montserrat:wght@400;700&display=swap" rel="stylesheet"> 
 </head>
 <body>
+    <nav>
+      <div id='nav-icon'><p id='title-nav'>WannaRead?</p></div>
+      <div id='nav-buttons'>
+          <button id='home-link' class="selected">Home</button>
+          <button>Advance</button>
+          <button >FAQ</button>
+          <button id='sign-up-link' href=#>Sign Up</button>
+          <button id='login-link' href=#>Login</button>
+      </div>
+    </nav>
     <div class="book">
+      <section class='home'>
+        <div id='page-title'>
+          <h1>WannaRead?</h1>
+        </div>
+        <div id='basic-search'>
+          <h2>Basic Search</h2>
+            <div>
+              <p class='question'>Looking for an author?</p>
+              <input type="text" placeholder="Author" class='author-input-b'/><button class='author-btn-b'>Search</button><!--canviar per lupa fontawersome, potser ficar nom d'autors en el placeholder-->  
+            </div>
+            <div>
+              <p class='question'>For books of a category?</p>
+              <input type="text" placeholder="Category" class='category-input-b' /><button class='category-btn-b'>Search</button><!--canviar per lupa fontawersome-->
+            </div>
+            <div>
+              <p class='question'>Or do you want a more advance search?</p>
+              <p>Flip the book to the next page -></p>
+            </div>
+        </div>
+      </section>
         <div class="page page0">
           <div class="side side0">
-            <p>Looking for an author?</p>
-            <input>
-            <p>For books of a category?</p>
-            <input>
-            <p>Or do you want a more advance search?</p>
-            <button>Advance search</button>
+              <section class='basic-recomendations'>
+                  <h1>Recomendations</h1>
+              </section>
           </div>
           <div class="side side1">
-            <h2>Recomendations</h2>
-            <button>Category1</button>
-            <div>
-                <img src='https://cdn.pixabay.com/photo/2020/08/22/15/51/ladybug-5508667_960_720.jpg'/> <img /> <img />
-            </div>
-            <button>Category2</button>
-            <div>
-                <img /> <img /> <img />
-            </div>
-            <button>Category3</button>
-            <div>
-                <img /> <img /> <img />
-            </div>
+              <section id='adv-search'>
+                  <div>
+                      <h2>Advance Search</h2>
+                  </div>
+                  <div id='inputs-adv-search'>
+                      <div><p>Author:</p><input type="text" class='author-input'/></div>
+                      <div><p>Category:</p><input type="text" class='category-input' /></div>
+                      <div><p>Language:</p><input list="languages" class='language-input' />
+                      <datalist id='languages'>
+                          <option value='spanish'></option>
+                          <option value='english'></option>
+                          <option value='arabic'></option>
+                          <option value='danish'></option>
+                          <option value='french'></option>
+                          <option value='german'></option>
+                          <option value='greek'></option>
+                          <option value='hebrew'></option>
+                          <option value='italian'></option>
+                          <option value='norwegian'></option>
+                          <option value='portuguese'></option>
+                          <option value='romanian'></option>
+                          <option value='russian'></option>
+                          <option value='turkish'></option>
+                          <option value='ukranian'></option>
+                          <option value='basque'></option>
+                          <option value='catalan'></option>
+                          <option value='chinese'></option>
+                      </datalist></div>
+                      <div><p>Publisher:</p><input type="text" class='publisher-input' /></div>
+                      <div>
+                       <input type="radio" id="relevance" name="order" value="relevance" checked>
+                      <label for="relevance">By relevance</label>
+                      </div>
+                      <div>
+                      <input type="radio" id="new" name="order" value="new">
+                      <label for="new">By new</label>
+                      </div>
+                      <button class='advance-btn'>Advance search</button>
+                  </div>
+              </section>
           </div>
         </div>
         <div class="page page1">
-          <div class="side side0">page 1 side 0</div>
-          <div class="side side1">page 1 side 1</div>
+          <div class="side side0">
+            <section class='advance-recomendations'>
+              <h1>Recomendations</h1>
+            </section>
+          </div>
+          <div class="side side1">
+            <div id='login-signup'>
+            <section class="login">
+              <h2>Login</h2>
+              <div class="form-wrapper">
+                <form class="login-form" action="">
+                  <input type="email" id="email-log" placeholder="Email" />
+                  <input type="password" id="password-log" placeholder="****" />
+                  <label for="remember-me">Remember me?<input type="checkbox" id="remember-me" name="remember-me"></label>
+                  <button type="submit" class="button" id="login-button">Login</button>
+                </form>
+                <div class="message-container-l">
+                </div>
+              </div>
+            </section>
+            <section class="sign-up">
+              <h2>Sign Up</h2>
+              <div class="form-wrapper">
+                <form class="signup-form" action="">
+                    <div class='input-wrapper-s'>
+                      <input type="text" id="username" placeholder="Username" />
+                      <input type="text" id="name" placeholder="Name" />
+                    </div>
+                    <div class='flex-wrapper'>
+                      <input type="text" id="email" placeholder="Email" />
+                      <p>Birthdate:</p>
+                      <input type="date" id="birthdate" placeholder="Birthdate" />
+                    </div>
+
+                    <div class='input-wrapper-s'>
+                      <input type="password" id="password" placeholder="****" />
+                      <input type="password" id="repeat-password" placeholder="****" />
+                    </div>
+                    <div id='policies-wrapper'>
+                      <input type="checkbox" id="policies" name="policy">
+                      <label for="policies">Do you accept our privacy policies?<a href=#>See policies</a></label>
+                    </div>
+                    <button type="submit" class="button" id="signup-button" disabled >Sign Up</button>
+                </form>
+                <div class="message-container-s">
+                </div>
+              </div>
+            </section>
+            </div>
+          </div>
         </div>
         <div class="page page2">
-          <div class="side side0">page 2 side 0</div>
-          <div class="side side1">page 2 side 1</div>
+          <div class="side side0">
+            <section id='recomendations3'>
+            </section>
+          </div>
+          <div class="side side1">
+            <section class='faq'>
+              <div>
+                  <h1>FAQ</h1>
+              </div>
+              <div>
+                  <p class='question'>What is this page about?</p>
+                  <p>We wanted to make a page where you could search for books of an author or find new books of a category you like</p>
+                  <p class='question'>Why a book's page?</p>
+                  <p>I'm very pasionate aboute reading and wanted a page where I could have organized the books I want to read, I'm reading or want to read</p>
+                  <p class='question'>How does it work?</p>
+                  <P>You can make basic search by author or category, or if you preffer an advance search where you can specify language, publicer, and if you want it ordered by relevance or newest</P>
+                  <p class='question'>Why Sign up?</p>
+                  <p>If you sign up you will be able to save the books you want to read</p>
+                  <p class='question'>Do you need to contact us?</p>
+                  <p>Send us an email to fakeadress@fake.com and we will reply as soon as possible</p>
+              </div>
+          </section>
+          </div>
         </div>
         <div class="page page3">
-          <div class="side side0">page 3 side 0</div>
-          <div class="side side1">page 3 side 1</div>
+          <div class="side side0">
+            <section id='recomendations4'>
+              <h1>Recomendations</h1>
+            </section>
+          </div>
+          <div class="side side1">
+          </div>
         </div>
         <img src='../img/llibre.png' class='img-book' />
-        <div class='to-the to-the-right'></div>
-        <div class='to-the to-the-left'></div>
       </div>
+      <div class='to-the to-the-right'><i class="fas fa-arrow-alt-circle-right fa-5x"></i></div>
+      <div class='to-the to-the-left'><i class="fas fa-arrow-alt-circle-left fa-5x"></i></div>
+    <script src="scripts/Login.js"></script>
+    <script src='scripts/Signup.js'></script>
+    <script src="scripts/User.js"></script>
+    <script src="scripts/Database.js"></script>
+    <script src="scripts/Validator.js"></script>
+      <script src='/recomendations.js'></script>
+      <script src='/twoDigitsLanguage.js'></script>
+      <script src="search.js"></script>
     <script src="index.js"></script>
 </body>
 </html>

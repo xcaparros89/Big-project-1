@@ -13,23 +13,16 @@
 <body>
   <header>
     <nav>
-      <div class="nav-container">
-        <a href="index.html"><img src="images/pokemon_logo.png" alt="Logo" class="navbar-brand"></a>
-        <div>
-          <div class="burger-menu-icon" >
-            <span></span>
-            <span></span>
-            <span></span>
-            <span></span>
-          </div>
-        </div>
+      <div>IconoWannaRead</div>
+      <div id='nav-buttons'>
+          <a id='home-link' href="home.html" class="selected">Home</a>
+          <a href='advance-search.html'>Advance search</a>
+          <a href='FAQ.html' >FAQ</a>
+          <a id='sign-up-link' href="sign-up.html">Sign Up</a>
+          <a id='login-link' href="login.html">Login</a>
+
       </div>
-      <ul class="nav-menu hide-menu" id="nav-menu">
-        <li><a href="dashboard.html">Dashboard</a></li>
-        <li><a href="sign-up.html">Sign Up</a></li>
-        <li><a href="login.html" class="selected">Login</a></li>
-      </ul>
-    </nav>
+  </nav>
   </header>
 
   <main>
@@ -37,8 +30,8 @@
       <h2>Login</h2>
       <div class="form-wrapper">
         <form class="login-form" action="">
-          <input type="email" id="email" placeholder="Email" />
-          <input type="password" id="password" placeholder="****" /> <p>ull per canviar de tipu password a tipu text</p>
+          <input type="email" id="email-log" placeholder="Email" />
+          <input type="password" id="password-log" placeholder="****" /> <p>ull per canviar de tipu password a tipu text</p>
           <input type="checkbox" id="remember-me" name="remember-me">
             <!-- <label for="remember-me">Remember me?</label> -->
           <button type="submit" class="button" id="login-button">Login</button>

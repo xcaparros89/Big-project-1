@@ -3,3 +3,8 @@ Photoshop:
 falta ficar-li una corda vermella al llibre,
 falta arreglar el borde de llibre per abaix
 falta afegir la foto del cafe
+
+fer que el navbar siguin punts de llibre;
+
+rating amb estrelles:  https://www.w3schools.com/howto/tryit.asp?filename=tryhow_css_star_rating
+reload de pagina: window.location.reload(true);
