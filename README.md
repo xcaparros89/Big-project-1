@@ -15,26 +15,31 @@ The MVP will cover the following:
     Login: A sign in form for existing users.
 
 ## Backlog    
-Like and hate buttons
-
-Dark and light mode.
-
-My page: page with profile and all the liked books
-
+Add more filters
 Wikipedia API for a little biography of the author
+Goodreads API to get reviews
+
 
 ## Wireframes    
-<img src='./wireframe/layout.jpg' alt='layout' />
+<img src='./img/wireframe/layout.jpg' alt='layout' />
 
 ## Data structure
-Classes and methods definition
-
+index.html
+style.css
+README.md
+scripts/
+    Database.js
+    index.js
+    Login.js
+    recomendations.js
+    search.js
+    Signup.js
+    twoDigitsLanguage.js
+    User.js
+    Validator.js
 
 ## APIs
 Google book APIs: https://developers.google.com/books
-
-## Links
-
 
 ### Trello (list of tasks)
 https://trello.com/invite/b/ZdRvUIQ7/cc08f3e91a2d3727cb8c18d52555d3e6/project1
@@ -42,10 +47,10 @@ https://trello.com/invite/b/ZdRvUIQ7/cc08f3e91a2d3727cb8c18d52555d3e6/project1
 
 ### Github
 URls for the project repo and deploy
-[Link Repo](http://github.com)
-[Link Deploy](http://github.com)
+[Link Repo](https://github.com/xcaparros89/Big-project-1)
+[Link Deploy](https://xcaparros89.github.io/Big-project-1/)
 
 
 ### Slides
 URls for the project presentation (slides)
-[Link Slides.com](http://slides.com)
+[Link Slides.com](https://docs.google.com/presentation/d/130yGkFJ5XKPbrTdCO1CELOIhYpJqPEHKf2yXl2gHAPA/edit?usp=sharing)
