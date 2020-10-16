@@ -97,8 +97,10 @@ class Login {
         const book = await response.json();
         if(book.items){
           const result = book.items[0];
+          const id = result.id;
+          const infoBook = `info-book-${result.id}`
           sectionList.innerHTML +=`
-          <h3>${result.volumeInfo.title}</h3>
+          <h3 class='title-book-login'>${result.volumeInfo.title}</h3>
           `
           sectionList.innerHTML +=`            
             <select id='save-${result.id}'>
@@ -106,7 +108,34 @@ class Login {
                 <option value=reading>Reading</option>
                 <option value=readed>Readed</option>
             </select>
-            <button class='save-btn' onClick='db.addBook(document.getElementById("save-${result.id}").value, "${result.id}")'><i class="fas fa-bookmark"></i></button>`;        
+            <button class='save-btn' onClick='db.addBook(document.getElementById("save-${result.id}").value, "${result.id}")'><i class="fas fa-bookmark"></i></button>`; 
+            document.querySelector('.title-book-login').addEventListener('click', ()=>{
+              sectionList.innerHTML = `<h2 class='title-book-info'>${result.volumeInfo.title}</h2><div id='flex-img-info'><img src=${result.volumeInfo.imageLinks.smallThumbnail} />
+              <div  id=${infoBook} class='info-book'><select id='save-${id}'>
+              <option value=wannaread>Wanna read</option>
+              <option value=reading>Reading</option>
+              <option value=readed>Readed</option>
+              </select>
+              <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>
+              </div>`
+              let infoBookEl = document.getElementById(infoBook)
+              if(result.volumeInfo.authors){
+                  let authors = result.volumeInfo.authors.join(', ');
+                  infoBookEl.innerHTML +=`<p>Authors: ${authors}</p>`;
+              };
+              if(result.volumeInfo.categories){
+                  let categories = result.volumeInfo.categories.join(', ');
+                  infoBookEl.innerHTML +=`<p>Categories: ${categories}</p>`;
+              };
+              result.volumeInfo.averageRating? result.volumeInfo.averageRating : 'Not found';
+              result.saleInfo.listPrice ? infoBookEl.innerHTML += `<p>${result.saleInfo.listPrice.amount}${result.saleInfo.listPrice.currencyCode} <a href=${result.saleInfo.buyLink} target="_blank">Buy</a></p>` : null;
+              result.volumeInfo.previewLink ? infoBookEl.innerHTML += `<a href=${result.volumeInfo.previewLink} target="_blank">Read preview</a>` : null;
+              let basicSearch;
+              if(typeof author1 !== 'undefined'){basicSearch = 'author1.basicSearch()'} else if (typeof authorB !== 'undefined'){basicSearch = 'authorB.basicSearch()'} else {basicSearch = 'categoryB.basicSearch()'}
+              infoBookEl.innerHTML += `<button id="${id}" onClick='window.location.reload()' class="return-btn">Return</button>`;
+              result.volumeInfo.description ? sectionList.innerHTML += `<p class='book-description'>${result.volumeInfo.description}</p>` : null;
+              document.getElementById('recomendations3').innerHTML = sectionList.innerHTML
+          });       
         }
       })
   }
@@ -125,9 +154,9 @@ class Login {
     <button class='more-btn'>Change profile</button>
     ` 
     this.printTitlesLike();
-    user.wannaread.length ? this.printReadLists('wannaread', user) : null;
-    user.readed.length ? this.printReadLists('readed', user) : null;
-    user.reading.length ? this.printReadLists('reading', user) : null;
+    user.wannaread.length ? this.printReadLists('wannaread', user) : '<p>Common, there has to be something you want to read</p>';
+    user.readed.length ? this.printReadLists('readed', user) : '<p>I know you have read something, add it</p>';
+    user.reading.length ? this.printReadLists('reading', user) : '<p>You will be reading some awersome book in no time</p>';
 }
 }
 const login = new Login();
