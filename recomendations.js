@@ -23,7 +23,7 @@ let recomendations = async (category, page)=>{
             <option value=reading>Reading</option>
             <option value=readed>Readed</option>
             </select>
-            <button onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'>save</button>
+            <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>
             </div>`
             let infoBookEl = document.getElementById(infoBook)
             if(result.volumeInfo.authors){

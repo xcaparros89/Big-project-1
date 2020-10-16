@@ -1,6 +1,23 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+  <link rel="apple-touch-icon" sizes="57x57" href="../img/favicon/apple-icon-57x57.png">
+<link rel="apple-touch-icon" sizes="60x60" href="../img/favicon/apple-icon-60x60.png">
+<link rel="apple-touch-icon" sizes="72x72" href="../img/favicon/apple-icon-72x72.png">
+<link rel="apple-touch-icon" sizes="76x76" href="../img/favicon/apple-icon-76x76.png">
+<link rel="apple-touch-icon" sizes="114x114" href="../img/favicon/apple-icon-114x114.png">
+<link rel="apple-touch-icon" sizes="120x120" href="../img/favicon/apple-icon-120x120.png">
+<link rel="apple-touch-icon" sizes="144x144" href="../img/favicon/apple-icon-144x144.png">
+<link rel="apple-touch-icon" sizes="152x152" href="../img/favicon/apple-icon-152x152.png">
+<link rel="apple-touch-icon" sizes="180x180" href="../img/favicon/apple-icon-180x180.png">
+<link rel="icon" type="image/png" sizes="192x192"  href="../img/favicon/android-icon-192x192.png">
+<link rel="icon" type="image/png" sizes="32x32" href="../img/favicon/favicon-32x32.png">
+<link rel="icon" type="image/png" sizes="96x96" href="../img/favicon/favicon-96x96.png">
+<link rel="icon" type="image/png" sizes="16x16" href="../img/favicon/favicon-16x16.png">
+<link rel="manifest" href="/manifest.json">
+<meta name="msapplication-TileColor" content="#ffffff">
+<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+<meta name="theme-color" content="#ffffff">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
@@ -10,9 +27,9 @@
 </head>
 <body>
     <nav>
-      <div id='nav-icon'><p id='title-nav'>WannaRead?</p></div>
+      <div id='nav-icon'><p id='title-nav'>WR?</p></div>
       <div id='nav-buttons'>
-          <button id='home-link' class="selected">Home</button>
+          <button onClick='window.location.reload()' id='home-link' class="selected">Home</button>
           <button>Advance</button>
           <button >FAQ</button>
           <button id='sign-up-link' href=#>Sign Up</button>
@@ -28,11 +45,11 @@
           <h2>Basic Search</h2>
             <div>
               <p class='question'>Looking for an author?</p>
-              <input type="text" placeholder="Author" class='author-input-b'/><button class='author-btn-b'>Search</button><!--canviar per lupa fontawersome, potser ficar nom d'autors en el placeholder-->  
+              <input type="text" placeholder="Author" class='author-input-b'/><button class='author-btn-b btn-b'>Search</button><!--canviar per lupa fontawersome, potser ficar nom d'autors en el placeholder-->  
             </div>
             <div>
               <p class='question'>For books of a category?</p>
-              <input type="text" placeholder="Category" class='category-input-b' /><button class='category-btn-b'>Search</button><!--canviar per lupa fontawersome-->
+              <input type="text" placeholder="Category" class='category-input-b' /><button class='category-btn-b btn-b'>Search</button><!--canviar per lupa fontawersome-->
             </div>
             <div class='unnecesary'>
               <p class='question'>Or do you want a more advance search?</p>
@@ -161,8 +178,8 @@
                   <P>You can make basic search by author or category, or if you preffer an advance search where you can specify language, publicer, and if you want it ordered by relevance or newest</P>
                   <p class='question'>Why Sign up?</p>
                   <p>If you sign up you will be able to save the books you want to read</p>
-                  <p class='question'>Do you need to contact us?</p>
-                  <p>Send us an email to fakeadress@fake.com and we will reply as soon as possible</p>
+                  <p class='question unnecesary-faq'>Do you need to contact us?</p>
+                  <p class='unnecesary-faq'>Send us an email to fakeadress@fake.com and we will reply as soon as possible</p>
               </div>
           </section>
           </div>

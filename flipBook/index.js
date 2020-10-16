@@ -24,6 +24,7 @@ toTheRight.addEventListener('click',()=>{
 
 function updatePagesDepth(stack) {
     console.log(stack.length)
+    new Audio('./sound/page-turn.wav').play();
     stack.forEach((page, i)=> {
       if (stack == leftStack) {
           //translateZ els posa mes aprop o lluny de la pantalla

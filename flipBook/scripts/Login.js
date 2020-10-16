@@ -66,7 +66,7 @@ class Login {
     };
   }
   oneBookSearch = async bookId => {
-    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q="${bookId}"&key=AIzaSyC5VX2_2TBk3EJV6dx8EKl3Q634tLoMQKU`);
+    const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q="${bookId}"`);
     const data = await response.json();
     console.log('fetch2', data);
 }
@@ -93,7 +93,7 @@ class Login {
       let sectionList = document.querySelector(`.${listName}`);
       console.log(sectionList, listName)
       user[listName].forEach(async bookId => {
-        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q="${bookId}"&key=AIzaSyC5VX2_2TBk3EJV6dx8EKl3Q634tLoMQKU`);
+        const response = await fetch(`https://www.googleapis.com/books/v1/volumes?q="${bookId}"`);
         const book = await response.json();
         if(book.items){
           const result = book.items[0];
@@ -106,7 +106,7 @@ class Login {
                 <option value=reading>Reading</option>
                 <option value=readed>Readed</option>
             </select>
-            <button onClick='db.addBook(document.getElementById("save-${result.id}").value, "${result.id}")'>save</button>`;        
+            <button class='save-btn' onClick='db.addBook(document.getElementById("save-${result.id}").value, "${result.id}")'><i class="fas fa-bookmark"></i></button>`;        
         }
       })
   }

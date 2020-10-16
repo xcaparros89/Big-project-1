@@ -39,18 +39,17 @@ class SearchParameters {
                         <option value=reading>Reading</option>
                         <option value=readed>Readed</option>
                     </select>
-                    <button onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'>save</button>`;
+                    <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>`;
                     }
                     title.addEventListener('click', ()=>{
-                        result.volumeInfo.imageLinks.smallThumbnail ? section.innerHTML = `<div id='flex-img-info'><img src=${result.volumeInfo.imageLinks.smallThumbnail} />
+                        result.volumeInfo.imageLinks.smallThumbnail ? section.innerHTML = `<h2 class='title-book-info'>${result.volumeInfo.title}</h2><div id='flex-img-info'><img src=${result.volumeInfo.imageLinks.smallThumbnail} />
                         <div  id=${infoBook} class='info-book'>
-                        <h2 class='title-book-info'>${result.volumeInfo.title}</h2>
                         <select id='save-${id}'>
                         <option value=wannaread>Wanna read</option>
                         <option value=reading>Reading</option>
                         <option value=readed>Readed</option>
                         </select>
-                        <button onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'>save</button>
+                        <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>
                         </div>`: 
                         `<div  id=${infoBook} class='info-book'></div><div>`;
                         let infoBookEl = document.getElementById(infoBook)
@@ -133,6 +132,7 @@ if(document.querySelector('.category-btn-b')){
 }
 
 window.addEventListener("load", ()=>{
+    if(screen.width<652){document.querySelectorAll('.btn-b').forEach(button=> button.innerHTML = '<i class="fas fa-search"></i>')}
     if(localStorage.getItem('currentUser')){
         document.querySelector('#login-link').innerText = 'My page';
         document.querySelector('#sign-up-link').remove();
