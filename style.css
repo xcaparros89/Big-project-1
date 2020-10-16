@@ -91,17 +91,17 @@ i:active{
 }
 
 .side0 { 
-    background-image: url('../img/rPage.png');
+    background-image: url('./img/rPage.png');
     background-size: cover;
   }
   .side1 { 
-    background-image: url('../img/lPage.png');
+    background-image: url('./img/lPage.png');
     background-size: cover
   }
 
 
 body {
-  background-image: url('../img/background-table.jpg');
+  background-image: url('./img/background-table.jpg');
   display: flex;
   flex-direction: column; 
 }
@@ -125,7 +125,7 @@ nav{
   justify-content: space-between;
 }
 #nav-icon{
-  background: url(/img/icono-libro.png) no-repeat bottom;
+  background: url('./img/icono-libro.png') no-repeat bottom;
   background-size: contain;
   width: 8rem;
 }
