@@ -42,16 +42,16 @@ class SearchParameters {
                     <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>`;
                     }
                     title.addEventListener('click', ()=>{
-                        result.volumeInfo.imageLinks.smallThumbnail ? section.innerHTML = `<h2 class='title-book-info'>${result.volumeInfo.title}</h2><div id='flex-img-info'><img src=${result.volumeInfo.imageLinks.smallThumbnail} />
-                        <div  id=${infoBook} class='info-book'>
-                        <select id='save-${id}'>
+                        section.innerHTML = `<h2 class='title-book-info'>${result.volumeInfo.title}</h2><div id='flex-img-info'><img src=${result.volumeInfo.imageLinks.smallThumbnail} />
+                        <div  id=${infoBook} class='info-book'>`
+                        if(JSON.parse(localStorage.getItem('currentUser'))){section.innerHTML +=
+                        `<select id='save-${id}'>
                         <option value=wannaread>Wanna read</option>
                         <option value=reading>Reading</option>
                         <option value=readed>Readed</option>
                         </select>
                         <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>
-                        </div>`: 
-                        `<div  id=${infoBook} class='info-book'></div><div>`;
+                        </div>`}
                         let infoBookEl = document.getElementById(infoBook)
                         if(result.volumeInfo.authors){
                             let authors = result.volumeInfo.authors.join(', ');

@@ -58,23 +58,32 @@ hover: display: none / block rgb(3,3,3, 0.6)
 */
 .to-the-left {
   position:absolute;
-  bottom: 4rem;
+  bottom: 24rem;
   left: 20rem;
   width: 11rem;
   height: 5rem;
+  filter: opacity(50%)
 }
 .to-the-right {
   position:absolute;
-  bottom: 5%;
+  bottom: 24rem;
   right: 17%;
   width: 11rem;
   height: 5rem;
   display: flex;
   justify-content: flex-end;
+  filter: opacity(50%)
+}
+.to-the-right:hover, .to-the-left:hover {
+  filter: opacity(100%)
 }
 
 i{
   color: rgb(83, 47, 0)
+}
+
+i:active{
+  color: rgb(168, 126, 75)
 }
 /*---------*/
 .img-book{
@@ -82,11 +91,11 @@ i{
 }
 
 .side0 { 
-    background-image: url('../img/lPage.png');
+    background-image: url('../img/rPage.png');
     background-size: cover;
   }
   .side1 { 
-    background-image: url('../img/fullaEsquerra.png');
+    background-image: url('../img/lPage.png');
     background-size: cover
   }
 
@@ -288,16 +297,14 @@ Add shadow to the book img only
 */
 @media (max-width: 1820px){
   .to-the-left {
-    position:absolute;
-    bottom: 0%;
+    bottom: 24rem;
     left: 11%;
     width: 15%;
     height: 10%;
     z-index: 99;
   }
   .to-the-right {
-    position:absolute;
-    bottom: 0%;
+    bottom: 24rem;
     right: 11%;
     width: 15%;
     height: 10%;
@@ -314,10 +321,10 @@ Add shadow to the book img only
 }
 @media (max-width: 1420px){
   .to-the-left {
-    left: 4%;
+    left: 0%;
   }
   .to-the-right {
-    right: 4%;
+    right: 0%;
   }
 }
 @media (max-width: 1130px){
@@ -412,13 +419,13 @@ Add shadow to the book img only
   }
 
   .to-the-left {
-    bottom: 5%;
+    top: 13%;
     left: 0;
     width: 10%;
     height: 12%;
   }
   .to-the-right {
-    bottom: 5%;
+    top: 13%;
     right: 0;
     width: 10%;
     height: 12%;
@@ -563,16 +570,14 @@ Add shadow to the book img only
         left: 0;
       }
       .to-the-left {
-        position:absolute;
-        top: 27%;
+        bottom: 24rem;
         left: 2%;
         width: 15%;
         height: 10%;
         z-index: 99;
       }
       .to-the-right {
-        position:absolute;
-        top: 27%;
+        bottom: 24rem;
         right: 2%;
         width: 15%;
         height: 10%;
@@ -582,14 +587,3 @@ Add shadow to the book img only
         height:12.7rem;
       }      
     }
-
-    @media (orientation: portrait) {
-      html {
-        transform: rotate(-90deg);
-        transform-origin: left top;
-        width: 100vh;
-        overflow-x: hidden;
-        position: absolute;
-        top: 100%;
-        left: 0;
-      }
