@@ -18,8 +18,9 @@ let recomendations = async (category, page)=>{
             <div id='flex-img-info'><img src=${result.volumeInfo.imageLinks.smallThumbnail} />
             <div  id=${infoBook} class='info-book'>
             <h2 class='title-book-info'>${result.volumeInfo.title}</h2>`;
+            let infoBookEl = document.getElementById(infoBook)
             if(JSON.parse(localStorage.getItem('currentUser'))){
-                `<select id='save-${id}'>
+                infoBookEl.innerHTML +=`<select id='save-${id}'>
                 <option value=wannaread>Wanna read</option>
                 <option value=reading>Reading</option>
                 <option value=readed>Readed</option>
@@ -27,7 +28,6 @@ let recomendations = async (category, page)=>{
                 <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>
                 </div>`
             }
-            let infoBookEl = document.getElementById(infoBook)
             if(result.volumeInfo.authors){
                 let authors = result.volumeInfo.authors.join(', ');
                 infoBookEl.innerHTML +=`<p>Authors: ${authors}</p>`;
