@@ -21,7 +21,7 @@ Goodreads API to get reviews
 
 
 ## Wireframes    
-<img src='./img/wireframe/layout.jpg' alt='layout' />
+<img src='img/wireframe/layout.jpg' alt='layout' />
 
 ## Data structure
 index.html
