@@ -1,5 +1,5 @@
-let leftStack = [document.querySelector('.page0')];
-let rightStack = [document.querySelector('.page4'),document.querySelector('.page3'),document.querySelector('.page2'),document.querySelector('.page1')];
+let leftStack = [];
+let rightStack = [document.querySelector('.page4'),document.querySelector('.page3'),document.querySelector('.page2'),document.querySelector('.page1'), document.querySelector('.page0')]; // [p4,p3,p2,p1,p0]
 let toTheLeft = document.querySelector('.to-the-left');
 let toTheRight = document.querySelector('.to-the-right');
 let goToHome = document.querySelector('#home-link');
@@ -84,10 +84,5 @@ function updatePagesDepth(stack, sound=true) {
   }
 
   window.addEventListener("load", ()=>{
-    console.log(rightStack, leftStack)
-    updatePagesDepth(rightStack, false)
-    console.log(rightStack, leftStack)
-    updatePagesDepth(leftStack, false)
-    console.log(rightStack, leftStack)
-    // setTimeout(()=>goTo('.page0'), 1500);
+    setTimeout(()=>goTo('.page0'), 1500);
   })
