@@ -2,22 +2,22 @@
 <html lang="en">
 <head>
   <link rel="apple-touch-icon" sizes="57x57" href="./img/favicon/apple-icon-57x57.png">
-<link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
-<link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
-<link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png">
-<link rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png">
-<link rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png">
-<link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
-<link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
-<link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
-<link rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png">
-<link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
-<link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
-<link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
-<link rel="manifest" href="/manifest.json">
-<meta name="msapplication-TileColor" content="#ffffff">
-<meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
-<meta name="theme-color" content="#ffffff">
+  <link rel="apple-touch-icon" sizes="60x60" href="./img/favicon/apple-icon-60x60.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="./img/favicon/apple-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="76x76" href="./img/favicon/apple-icon-76x76.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="./img/favicon/apple-icon-114x114.png">
+  <link rel="apple-touch-icon" sizes="120x120" href="./img/favicon/apple-icon-120x120.png">
+  <link rel="apple-touch-icon" sizes="144x144" href="./img/favicon/apple-icon-144x144.png">
+  <link rel="apple-touch-icon" sizes="152x152" href="./img/favicon/apple-icon-152x152.png">
+  <link rel="apple-touch-icon" sizes="180x180" href="./img/favicon/apple-icon-180x180.png">
+  <link rel="icon" type="image/png" sizes="192x192"  href="./img/favicon/android-icon-192x192.png">
+  <link rel="icon" type="image/png" sizes="32x32" href="./img/favicon/favicon-32x32.png">
+  <link rel="icon" type="image/png" sizes="96x96" href="./img/favicon/favicon-96x96.png">
+  <link rel="icon" type="image/png" sizes="16x16" href="./img/favicon/favicon-16x16.png">
+  <link rel="manifest" href="/manifest.json">
+  <meta name="msapplication-TileColor" content="#ffffff">
+  <meta name="msapplication-TileImage" content="/ms-icon-144x144.png">
+  <meta name="theme-color" content="#ffffff">
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>WannaRead?</title>
@@ -29,35 +29,44 @@
     <nav>
       <div id='nav-icon'><p id='title-nav'>WR?</p></div>
       <div id='nav-buttons'>
-          <button onClick='window.location.reload()' id='home-link' class="selected">Home</button>
-          <button>Advance</button>
-          <button >FAQ</button>
+          <button id='home-link' class="selected">Home</button>
+          <button id='adv-link'>Advance</button>
+          <button id='faq-link'>FAQ</button>
           <button id='sign-up-link' href=#>Sign Up</button>
           <button id='login-link' href=#>Login</button>
       </div>
     </nav>
     <div class="book">
-      <section class='home'>
-        <div id='page-title'>
-          <h1>WannaRead?</h1>
+      <div class="page page0" style="transform:rotateY(-180deg) translateZ(${-i}px); transition: transform 0s">
+        <div class="side side0">
+            <section class='welcome'>
+                <h1>Welcome to WannaRead?</h1>
+            </section>
         </div>
-        <div id='basic-search'>
-          <h2>Basic Search</h2>
-            <div>
-              <p class='question'>Looking for an author?</p>
-              <input type="text" placeholder="Author" class='author-input-b'/><button class='author-btn-b btn-b'>Search</button><!--canviar per lupa fontawersome, potser ficar nom d'autors en el placeholder-->  
+        <div class="side side1">
+          <section class='home'>
+            <div id='page-title'>
+              <h1>WannaRead?</h1>
             </div>
-            <div>
-              <p class='question'>For books of a category?</p>
-              <input type="text" placeholder="Category" class='category-input-b' /><button class='category-btn-b btn-b'>Search</button><!--canviar per lupa fontawersome-->
+            <div id='basic-search'>
+              <h2>Basic Search</h2>
+                <div>
+                  <p class='question'>Looking for an author?</p>
+                  <input type="text" placeholder="Author" class='author-input-b'/><button class='author-btn-b btn-b'><i class="fas fa-search"></i></button><!--canviar per lupa fontawersome, potser ficar nom d'autors en el placeholder-->  
+                </div>
+                <div>
+                  <p class='question'>For books of a category?</p>
+                  <input type="text" placeholder="Category" class='category-input-b' /><button class='category-btn-b btn-b'><i class="fas fa-search"></i></button><!--canviar per lupa fontawersome-->
+                </div>
+                <div class='unnecesary'>
+                  <p class='question'>Or do you want a more advance search?</p>
+                  <p>Flip the book to the next page -></p>
+                </div>
             </div>
-            <div class='unnecesary'>
-              <p class='question'>Or do you want a more advance search?</p>
-              <p>Flip the book to the next page -></p>
-            </div>
+          </section>
         </div>
-      </section>
-        <div class="page page0">
+      </div>
+        <div class="page page1">
           <div class="side side0">
               <section class='basic-recomendations recomendations'>
                   <h1>Recomendations</h1>
@@ -106,7 +115,7 @@
               </section>
           </div>
         </div>
-        <div class="page page1">
+        <div class="page page2">
           <div class="side side0">
             <section class='advance-recomendations recomendations'>
               <h1>Recomendations</h1>
@@ -158,7 +167,7 @@
             </div>
           </div>
         </div>
-        <div class="page page2">
+        <div class="page page3">
           <div class="side side0">
             <section id='recomendations3' class='recomendations'>
               <h1>Recomendations</h1>
@@ -184,7 +193,7 @@
           </section>
           </div>
         </div>
-        <div class="page page3">
+        <div class="page page4">
           <div class="side side0">
             <section id='recomendations4' class='recomendations'>
               <h1>Recomendations</h1>
@@ -197,14 +206,14 @@
       </div>
       <div class='to-the to-the-right'><i class="fas fa-arrow-alt-circle-right fa-5x"></i></div>
       <div class='to-the to-the-left'><i class="fas fa-arrow-alt-circle-left fa-5x"></i></div>
-    <script src="scripts/Login.js"></script>
-    <script src='scripts/Signup.js'></script>
-    <script src="scripts/User.js"></script>
-    <script src="scripts/Database.js"></script>
-    <script src="scripts/Validator.js"></script>
-      <script src='./scripts/recomendations.js'></script>
+      <script src="scripts/Database.js"></script>
+      <script src="scripts/Validator.js"></script>
+      <script src="scripts/User.js"></script>
       <script src='./scripts/twoDigitsLanguage.js'></script>
+      <script src="scripts/Login.js"></script>
+      <script src='scripts/Signup.js'></script>
+      <script src='./scripts/recomendations.js'></script>
       <script src="./scripts/search.js"></script>
-    <script src="./scripts/index.js"></script>
+      <script src="./scripts/index.js"></script>
 </body>
 </html>

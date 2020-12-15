@@ -154,9 +154,9 @@ class Login {
     <button class='more-btn'>Change profile</button>
     ` 
     this.printTitlesLike();
-    user.wannaread.length ? this.printReadLists('wannaread', user) : '<p>Common, there has to be something you want to read</p>';
-    user.readed.length ? this.printReadLists('readed', user) : '<p>I know you have read something, add it</p>';
-    user.reading.length ? this.printReadLists('reading', user) : '<p>You will be reading some awersome book in no time</p>';
+    user.wannaread.length ? this.printReadLists('wannaread', user) : 'Common, there has to be something you want to read';
+    user.readed.length ? this.printReadLists('readed', user) : 'I know you have read something, add it';
+    user.reading.length ? this.printReadLists('reading', user) : 'You will be reading some awersome book in no time';
 }
 }
 const login = new Login();

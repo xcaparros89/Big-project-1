@@ -138,7 +138,7 @@ nav{
 
 /* home */
 .home{
-  margin-left: 21rem;
+  margin-left: 5rem;
   width: 25rem;
   height: 50rem;
 }
@@ -153,6 +153,8 @@ nav{
   height: 30rem;
 
 }
+
+.btn-b{width: 10%; height:1.5rem;}
 
 .more-btn{
   width:10rem;
@@ -343,7 +345,7 @@ Add shadow to the book img only
 }
 
 .home{
-  margin-left: 28rem;
+  margin-left: 2rem;
   margin-top: -2rem;
   width: 20rem;
 
@@ -435,7 +437,7 @@ Add shadow to the book img only
   }
   
   .home{
-    margin-left: 33.5rem;
+    margin-left: 1rem;
     margin-top: 1.3rem;
     width: 16rem;
     height: 17rem;
@@ -549,12 +551,10 @@ Add shadow to the book img only
       position:absolute; width:34%; height:19rem ; z-index: -10; top:0; left: 33%;
     }
     
-    .home{margin-left:35rem;}
     .unnecesary-faq{
       display:none
     }
     .recomendations{height: 14rem;}
-    .btn-b{width: 15%; height:1.5rem;}
     }
 
 

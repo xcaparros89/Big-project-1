@@ -18,16 +18,16 @@ let recomendations = async (category, page)=>{
             <div id='flex-img-info'><img src=${result.volumeInfo.imageLinks.smallThumbnail} />
             <div  id=${infoBook} class='info-book'>
             <h2 class='title-book-info'>${result.volumeInfo.title}</h2>`;
+            let infoBookEl = document.getElementById(infoBook)
             if(JSON.parse(localStorage.getItem('currentUser'))){
-                `<select id='save-${id}'>
+                infoBookEl.innerHTML +=`<select id='save-${id}'>
                 <option value=wannaread>Wanna read</option>
                 <option value=reading>Reading</option>
                 <option value=readed>Readed</option>
                 </select>
                 <button class='save-btn' onClick='db.addBook(document.getElementById("save-${id}").value, "${id}")'><i class="fas fa-bookmark"></i></button>
-                </div>`
+                </div>`;
             }
-            let infoBookEl = document.getElementById(infoBook)
             if(result.volumeInfo.authors){
                 let authors = result.volumeInfo.authors.join(', ');
                 infoBookEl.innerHTML +=`<p>Authors: ${authors}</p>`;
@@ -48,19 +48,19 @@ let recomendations = async (category, page)=>{
     });
 };
 
-let getThreeRand =()=>{
+let getRand =(num)=>{
     let recomendationsArr = ['Romance','Fiction', 'Fantasy', 'Suspense', 'Horror', 'Mystery', 'Historical', 'Science-Fiction','Humor', 'Nonfiction', 'Poetry', 'Food'];
     let newRecomendationsArr = [];
-    while(newRecomendationsArr.length<4){
+    while(newRecomendationsArr.length<num){
             var rand = Math.floor(Math.random() * (recomendationsArr.length));
             !newRecomendationsArr.includes(recomendationsArr[rand]) ? newRecomendationsArr.push(recomendationsArr[rand]) : null;
     }
     return newRecomendationsArr;
 };
 
-let randomThree = getThreeRand();
+let fourRandomArr = getRand(4);
 
-     recomendations(randomThree[0], '.basic-recomendations');
-     recomendations(randomThree[1], '.advance-recomendations');
-     if(!localStorage.getItem('currentUser')){recomendations(randomThree[2], '#recomendations3');}
-     recomendations(randomThree[3], '#recomendations4');
+     recomendations(fourRandomArr[0], '.basic-recomendations');
+     recomendations(fourRandomArr[1], '.advance-recomendations');
+     if(!localStorage.getItem('currentUser')){recomendations(fourRandomArr[2], '#recomendations3');}
+     recomendations(fourRandomArr[3], '#recomendations4');

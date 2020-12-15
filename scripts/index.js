@@ -1,30 +1,76 @@
-const pages = Array.from(document.querySelectorAll(".page"));
-const book = document.querySelector(".book");
-let leftStack = [];
-let rightStack = Array.from(pages).reverse(); // [p3,p2,p1,p0]
+let leftStack = [document.querySelector('.page0')];
+let rightStack = [document.querySelector('.page4'),document.querySelector('.page3'),document.querySelector('.page2'),document.querySelector('.page1')];
 let toTheLeft = document.querySelector('.to-the-left');
 let toTheRight = document.querySelector('.to-the-right');
+let goToHome = document.querySelector('#home-link');
+let goToAdvanceSearch = document.querySelector('#adv-link');
+let goToSignUp = document.querySelector('#sign-up-link');
+let goToLogin = document.querySelector('#login-link');
+let goTofaq = document.querySelector('#faq-link');
 
-updatePagesDepth(rightStack);
+//updatePagesDepth(rightStack, false);
 
 toTheLeft.addEventListener('click',()=>{
-  if(leftStack.length){
+  console.log(leftStack, rightStack)
+  if(leftStack.length>1){
     const page = leftStack.pop();
     rightStack.push(page);
     updatePagesDepth(rightStack);
   }
 })
+
 toTheRight.addEventListener('click',()=>{
-  if(rightStack.length){
+  console.log(leftStack, rightStack)
+  console.log('hi')
+  if(rightStack.length>1){
     const page = rightStack.pop();
     leftStack.push(page);
     updatePagesDepth(leftStack);
   }
 })
 
-function updatePagesDepth(stack) {
+function goTo(page){
+  let pageToGo = document.querySelector(page);
+  if(rightStack.includes(pageToGo)){
+    while(leftStack[leftStack.length-1] !== pageToGo){
+      console.log(leftStack, 'leftStack');
+      console.log(rightStack, 'rightStack');
+      const pageLast = rightStack.pop();
+      leftStack.push(pageLast);
+      console.log(leftStack, 'nLeftStack');
+      console.log(rightStack, 'nRightStack');
+      updatePagesDepth(leftStack);
+    }
+  } else{
+    while(leftStack[leftStack.length-1] !== pageToGo){
+      const page = leftStack.pop();
+      rightStack.push(page);
+      updatePagesDepth(rightStack);
+    }
+  }
+}
+
+goToHome.addEventListener('click', ()=>{
+  goTo('.page0')
+})
+goToAdvanceSearch.addEventListener('click', ()=>{
+  goTo('.page1')
+})
+goToSignUp.addEventListener('click', ()=>{
+  goTo('.page2')
+})
+goToLogin.addEventListener('click', ()=>{
+  goTo('.page2')
+})
+goTofaq.addEventListener('click', ()=>{
+  goTo('.page3')
+})
+
+function updatePagesDepth(stack, sound=true) {
     console.log(stack.length)
-    new Audio('./sound/page-turn.wav').play();
+    if(sound){
+      new Audio('./sound/page-turn.wav').play();
+    }
     stack.forEach((page, i)=> {
       if (stack == leftStack) {
           //translateZ els posa mes aprop o lluny de la pantalla
@@ -37,28 +83,11 @@ function updatePagesDepth(stack) {
     })
   }
 
-
-
-
-  // pages.forEach(page=>{
-  //   let toThe = document.querySelector('.to-the');
-  //   toThe.addEventListener("click", function(e){
-  //     //change position of page from flipped to normal
-  //     if (e.currentTarget.classList.contains("flipped")) { 
-  //       console.log('flipped')
-  //       const page = leftStack.pop();
-  //       rightStack.push(page);
-  //       toThe.classList.remove("flipped");
-  //       updatePagesDepth(rightStack);
-  //     }
-  //     //change position of page from normal to flipped
-  //     else {
-  //       console.log('normal')
-  //       const page = rightStack.pop();
-  //       leftStack.push(page);
-  //       toThe.classList.add("flipped");
-  //       updatePagesDepth(leftStack);
-  //     }
-  //   });
-  // })
-  
+  window.addEventListener("load", ()=>{
+    console.log(rightStack, leftStack)
+    updatePagesDepth(rightStack, false)
+    console.log(rightStack, leftStack)
+    updatePagesDepth(leftStack, false)
+    console.log(rightStack, leftStack)
+    // setTimeout(()=>goTo('.page0'), 1500);
+  })
