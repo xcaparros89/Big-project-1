@@ -6,10 +6,10 @@ WannaRead? is a page webpage that uses the google books Api to make a database o
 ## Technologies used
 Html, CSS, javascript, fetch, responsive design
 
-### Link deploy
+## Link deploy
 [Link Deploy](https://xcaparros89.github.io/Book-searcher-page/)
 
-### To try it
+## To try it
 Write in the console:
 - npm i
 - npm start
