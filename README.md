@@ -1,6 +1,6 @@
 # WannaRead?
 
-## What is this project?
+## Description
 WannaRead? is a page webpage that uses the google books Api to make a database of books. So you can search and save books.
 
 ## Technologies used
