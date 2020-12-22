@@ -1,8 +1,20 @@
-# Project's name
-WannaRead?
+# WannaRead?
 
-## Description
-WannaRead? is a webpage that uses the google books Api to make a database of books. So you can search and save books.
+## What is this project?
+WannaRead? is a page webpage that uses the google books Api to make a database of books. So you can search and save books.
+
+## Technologies used
+Html, CSS, javascript, fetch, responsive design
+
+### Link deploy
+[Link Deploy](https://xcaparros89.github.io/Big-project-1/)
+
+### To try it
+Write in the console:
+- npm i
+- npm start
+- Open http://localhost:3000
+
 
 ## Pages
 
@@ -26,7 +38,4 @@ Goodreads API to get reviews
 Google book APIs: https://developers.google.com/books
 
 
-### Github
-URls for the project repo and deploy
-[Link Repo](https://github.com/xcaparros89/Big-project-1)
-[Link Deploy](https://xcaparros89.github.io/Big-project-1/)
+
