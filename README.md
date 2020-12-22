@@ -7,7 +7,7 @@ WannaRead? is a page webpage that uses the google books Api to make a database o
 Html, CSS, javascript, fetch, responsive design
 
 ### Link deploy
-[Link Deploy](https://xcaparros89.github.io/Big-project-1/)
+[Link Deploy](https://xcaparros89.github.io/Book-searcher-page/)
 
 ### To try it
 Write in the console:
